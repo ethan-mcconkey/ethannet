@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"conventionalCommits.scopes": [
+			"vs code",
+			"src",
+			"test",
+			"node",
+			"next",
+			"github",
+			"git"
+		]
+	}
+}
