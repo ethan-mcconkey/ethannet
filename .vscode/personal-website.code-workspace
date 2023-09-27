@@ -13,6 +13,9 @@
 			"next",
 			"github",
 			"git"
-		]
+		],
+		"files.associations": {
+			"**/*.css": "tailwindcss"
+		}
 	}
 }
