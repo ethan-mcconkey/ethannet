@@ -18,3 +18,23 @@ body {
 	background-color: var(--background-colour);
 	color: var(--text-colour);
 }
+
+@layer components {
+	.nav-bar {
+		@apply flex-row p-2 align-middle;
+	}
+	.nav-item {
+		@apply border border-black;
+	}
+
+	.active-nav-item {
+		@apply nav-item underline;
+	}
+}
+
+.debug-border {
+	border-width: 2px;
+	border-color: red;
+	border-style: dotted;
+	border-spacing: 0;
+}
