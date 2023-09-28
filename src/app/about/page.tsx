@@ -1,8 +1,8 @@
 import NavBar from "@/components/navbar/NavBar";
 
-const page: string = "home";
+const page: string = "about";
 
-export default function Home() {
+export default function About() {
 	return (
 		<main className={page} id={page}>
 			<NavBar currentPage={page} />

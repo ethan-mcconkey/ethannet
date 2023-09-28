@@ -3,25 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--background-colour: #85a1bd;
+	--text-colour: #646464;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--background-colour: #677f97;
+		--text-colour: #cfeff7;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	background-color: var(--background-colour);
+	color: var(--text-colour);
+}
+
+@layer components {
+	.nav-bar {
+		@apply flex-row p-2 align-middle;
+	}
+	.nav-item {
+		@apply border border-black;
+	}
+
+	.active-nav-item {
+		@apply nav-item underline;
+	}
+}
+
+.debug-border {
+	border-width: 2px;
+	border-color: red;
+	border-style: dotted;
+	border-spacing: 0;
 }
