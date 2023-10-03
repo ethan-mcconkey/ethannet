@@ -23,12 +23,11 @@ body {
 	.nav-bar {
 		@apply flex-row p-2 align-middle;
 	}
-	.nav-item {
+	.nav-link {
 		@apply border border-black;
 	}
-
-	.active-nav-item {
-		@apply nav-item underline;
+	.current-page-nav-link {
+		@apply nav-link underline;
 	}
 }
 
