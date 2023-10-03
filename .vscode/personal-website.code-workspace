@@ -13,7 +13,8 @@
 			"next",
 			"github",
 			"git",
-			"typescript"
+			"typescript",
+			"css"
 		],
 		"files.associations": {
 			"**/*.css": "tailwindcss"

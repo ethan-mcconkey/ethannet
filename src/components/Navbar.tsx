@@ -1,17 +1,13 @@
 import Link from "next/link";
 
-export type NavBarProps = {
-	currentPage: string;
-};
-
-export default function NavBar(props: NavBarProps): JSX.Element {
+export default function Navbar(props: { currentPage: string }): JSX.Element {
 	return (
 		<nav className="nav-bar">
 			<Link
 				className={
 					props.currentPage === "home"
-						? "active-nav-item"
-						: "nav-item"
+						? "current-page-nav-link"
+						: "nav-link"
 				}
 				href="/"
 			>
@@ -20,8 +16,8 @@ export default function NavBar(props: NavBarProps): JSX.Element {
 			<Link
 				className={
 					props.currentPage === "about"
-						? "active-nav-item"
-						: "nav-item"
+						? "current-page-nav-link"
+						: "nav-link"
 				}
 				href="/about"
 			>
@@ -30,8 +26,8 @@ export default function NavBar(props: NavBarProps): JSX.Element {
 			<Link
 				className={
 					props.currentPage === "blog"
-						? "active-nav-item"
-						: "nav-item"
+						? "current-page-nav-link"
+						: "nav-link"
 				}
 				href="/blog"
 			>
