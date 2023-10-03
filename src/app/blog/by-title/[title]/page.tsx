@@ -1,11 +1,7 @@
-export function generateStaticParams() {
+export async function generateStaticParams() {
 	return [];
 }
 
-export default function Post(params: { post: string }): JSX.Element {
-	return (
-		<main>
-			<h1>{params.post}</h1>
-		</main>
-	);
+export default function Post(): JSX.Element {
+	return <main></main>;
 }
