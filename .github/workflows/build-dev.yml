@@ -32,5 +32,3 @@ jobs:
               run: npx next lint
             - name: Build
               run: npx next build
-            - name: Static HTML Export
-              run: npx next export
