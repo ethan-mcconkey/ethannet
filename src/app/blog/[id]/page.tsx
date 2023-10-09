@@ -3,6 +3,7 @@ import {
 	getPostsSortedByTitle,
 	type PostMarkdownMetadata,
 } from "@/components/Posts";
+import Navbar from "@/components/nav-bar";
 import PostBody from "@/components/post-body";
 import PostHeader from "@/components/post-header";
 
@@ -23,6 +24,7 @@ export default function BlogPost({
 
 	return (
 		<>
+			<Navbar page="blog" />
 			<PostHeader
 				id={params.id}
 				title={post.title}

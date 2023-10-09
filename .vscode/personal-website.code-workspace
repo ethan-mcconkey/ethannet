@@ -14,7 +14,8 @@
 			"github",
 			"git",
 			"typescript",
-			"css"
+			"css",
+			"blog"
 		],
 		"files.associations": {
 			"**/*.css": "tailwindcss"
