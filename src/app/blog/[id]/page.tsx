@@ -1,8 +1,6 @@
-import {
-	getPostById,
-	getPostsSortedByTitle,
-	type PostMarkdownMetadata,
-} from "@/components/Posts";
+import { Metadata } from "next";
+
+import { getPostById, getPostsSortedByTitle } from "@/lib/posts";
 import Navbar from "@/components/nav-bar";
 import PostBody from "@/components/post-body";
 import PostHeader from "@/components/post-header";
@@ -15,23 +13,35 @@ export function generateStaticParams() {
 	}));
 }
 
+export async function generateMetadata({
+	params,
+}: {
+	params: { id: string };
+}): Promise<Metadata> {
+	const post = getPostById(params.id);
+	return {
+		title: post.title,
+	};
+}
+
 export default function BlogPost({
 	params,
 }: {
-	params: PostMarkdownMetadata;
+	params: { id: string };
 }): JSX.Element {
 	const post = getPostById(params.id);
 
 	return (
-		<>
+		<main>
 			<Navbar page="blog" />
-			<PostHeader
-				id={params.id}
-				title={post.title}
-				publishedDate={post.publishedDate}
-				editedDate={post.editedDate}
-			/>
-			<PostBody id={params.id} content={post.content} />
-		</>
+			<div className="p-8">
+				<PostHeader
+					title={post.title}
+					publishedDate={post.publishedDate}
+					editedDate={post.editedDate}
+				/>
+				<PostBody content={post.content} />
+			</div>
+		</main>
 	);
 }

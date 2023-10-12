@@ -29,7 +29,28 @@ body {
 	}
 
 	.active-nav-item {
-		@apply nav-item underline;
+	.post-header {
+		@apply flex flex-col justify-center;
+	}
+
+	.post-title {
+		@apply text-center font-bold underline underline-offset-2 text-xl;
+	}
+
+	.post-dates {
+		@apply italic text-[14px] pb-1;
+	}
+
+	.post-header > hr {
+		@apply border-4;
+	}
+
+	.post-body {
+		@apply pt-1;
+	}
+
+	.post-body > pre {
+		@apply font-bold rounded p-1 m-1 bg-gray-300 text-gray-700;
 	}
 }
 
