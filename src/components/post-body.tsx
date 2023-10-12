@@ -1,17 +1,14 @@
-import { markdownToHtml } from "./Posts";
+import { markdownToHtml } from "@/lib/posts";
 
-type PostBodyProps = {
-	id: string;
+export default async function PostBody(params: {
 	content: string;
-};
-
-export default async function PostBody(props: PostBodyProps) {
-	const content = await markdownToHtml(props.content);
+}): Promise<JSX.Element> {
+	const content = await markdownToHtml(params.content);
 
 	return (
 		<div
-			id={props.id + "-body"}
+			className="post-body"
 			dangerouslySetInnerHTML={{ __html: content }}
-		></div>
+		/>
 	);
 }
