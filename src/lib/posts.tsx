@@ -12,6 +12,7 @@ export async function markdownToHtml(markdown: string) {
 type Post = {
 	id: string;
 	title: string;
+	category: string;
 	publishedDate: Date;
 	editedDate: Date;
 	content: string;
@@ -27,6 +28,7 @@ const allPostsData: Post[] = fileNames.map((fileName): Post => {
 	return {
 		id: fileName.replace(/\.md$/, "").toLowerCase().replace(" ", "-"),
 		title: data.title,
+		category: data.category.toLowerCase().replace(" ", "-"),
 		publishedDate: new Date(data.publishedDate),
 		editedDate: new Date(data.editedDate),
 		content: content,

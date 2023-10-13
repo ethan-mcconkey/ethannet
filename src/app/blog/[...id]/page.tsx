@@ -9,27 +9,27 @@ export function generateStaticParams() {
 	const posts = getPostsSortedByTitle();
 
 	return posts.map((post) => ({
-		id: post.id,
+		id: [post.category, post.id],
 	}));
 }
 
 export async function generateMetadata({
 	params,
 }: {
-	params: { id: string };
+	params: { id: string[] };
 }): Promise<Metadata> {
-	const post = getPostById(params.id);
+	const post = getPostById(params.id[1]);
 	return {
-		title: post.title,
+		title: post.category.toUpperCase() + ": " + post.title,
 	};
 }
 
 export default function BlogPost({
 	params,
 }: {
-	params: { id: string };
+	params: { id: string[] };
 }): JSX.Element {
-	const post = getPostById(params.id);
+	const post = getPostById(params.id[1]);
 
 	return (
 		<main>

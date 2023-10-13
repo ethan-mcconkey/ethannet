@@ -1,6 +1,11 @@
 import Navbar from "@/components/nav-bar";
+import { Metadata } from "next";
 
 const page: string = "about";
+
+export const metadata: Metadata = {
+	title: "About Me",
+};
 
 export default function About() {
 	return (

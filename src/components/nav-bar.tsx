@@ -1,12 +1,8 @@
-import NavItem from "./nav-item";
+import NavItem from "@/components/nav-item";
 
-type NavbarParams = {
-	page: string;
-};
-
-export default function Navbar(params: NavbarParams) {
+export default function Navbar(params: { page: string }) {
 	return (
-		<nav id={"navbar-" + params.page} className="navbar">
+		<nav className="navbar">
 			<NavItem
 				pageTitle="Home"
 				pageLink="/"

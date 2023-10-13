@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-	--background-colour: #85a1bd;
-	--text-colour: #646464;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background-colour: #677f97;
-		--text-colour: #cfeff7;
-	}
+	--background-colour: #607081;
+	--text-colour: #fdfdfd;
 }
 
 body {
@@ -21,14 +14,17 @@ body {
 
 @layer components {
 	.navbar {
-		@apply border-spacing-1 border-black border-solid border;
+		@apply border-spacing-1 border-solid border-b-2 flex justify-around p-1 pr-[85%];
 	}
 
 	.nav-item {
-		@apply p-4;
+		@apply font-[10px];
 	}
 
 	.active-nav-item {
+		@apply nav-item font-bold;
+	}
+
 	.post-header {
 		@apply flex flex-col justify-center;
 	}
@@ -46,11 +42,19 @@ body {
 	}
 
 	.post-body {
-		@apply pt-1;
+		@apply mt-1 p-2 border-2 border-gray-300 rounded-xl;
 	}
 
 	.post-body > pre {
 		@apply font-bold rounded p-1 m-1 bg-gray-300 text-gray-700;
+	}
+
+	.post-tiles {
+		@apply m-8 p-8 border-2 border-gray-300 rounded-2xl grid grid-rows-1 grid-cols-3;
+	}
+
+	.post-tile {
+		@apply border p-2 m-2;
 	}
 }
 
