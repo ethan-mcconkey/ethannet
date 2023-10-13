@@ -18,7 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout 'dev' Branch
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   ref: dev
             - name: Setup Node
