@@ -1,12 +1,10 @@
 import Link from "next/link";
 
-type NavItemParams = {
+export default function NavItem(params: {
 	pageTitle: string;
 	pageLink: string;
 	isActive: boolean;
-};
-
-export default function NavItem(params: NavItemParams) {
+}) {
 	return (
 		<Link
 			href={params.pageLink}
