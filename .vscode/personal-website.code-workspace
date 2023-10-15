@@ -20,7 +20,7 @@
 		"files.associations": {
 			"**/*.css": "tailwindcss"
 		},
-		"cSpell.words": ["rehype"]
+		"cSpell.words": ["Josefin", "rehype"]
 	},
 	"tasks": {
 		"version": "2.0.0",
