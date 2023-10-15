@@ -1,8 +1,8 @@
-name: Build Dev Project
+name: Build and Test
 
 on:
     push:
-        branches: ["dev"]
+        branches-ignore: ["main"]
     workflow_dispatch:
 
 permissions:
@@ -14,13 +14,11 @@ concurrency:
     cancel-in-progress: false
 
 jobs:
-    build:
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout 'dev' Branch
+            - name: Checkout
               uses: actions/checkout@v4
-              with:
-                  ref: dev
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
@@ -28,7 +26,19 @@ jobs:
                   cache: npm
             - name: Install Dependencies
               run: npm ci
-            - name: Lint
-              run: npx next lint
+            - name: Test
+              run: "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18.18.0"
+                  cache: npm
+            - name: Install Dependencies
+              run: npm ci
             - name: Build
               run: npx next build
