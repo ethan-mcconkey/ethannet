@@ -18,7 +18,7 @@ type Post = {
 	content: string;
 };
 
-const postsDirectory = path.join(process.cwd(), "src/static/posts");
+const postsDirectory = path.join(process.cwd(), "static/posts");
 const fileNames = fs.readdirSync(postsDirectory);
 const allPostsData: Post[] = fileNames.map((fileName): Post => {
 	const { data, content } = matter(
