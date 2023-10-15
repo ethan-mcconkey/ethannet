@@ -2,27 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--background-colour: #607081;
-	--text-colour: #fdfdfd;
-}
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 body {
-	background-color: var(--background-colour);
-	color: var(--text-colour);
+	font-family: "Josefin Sans", sans-serif;
 }
 
 @layer components {
 	.navbar {
-		@apply border-spacing-1 border-solid border-b-2 flex justify-around p-1 pr-[85%];
+		@apply border-solid border-spacing-1 border-b-[3px] grid grid-cols-3 p-1 pr-[85%];
 	}
 
 	.nav-item {
-		@apply font-[10px];
+		@apply font-[10px] text-center;
+	}
+
+	.nav-item:is(:hover, :focus) {
+		@apply font-bold;
 	}
 
 	.active-nav-item {
-		@apply nav-item font-bold;
+		@apply nav-item outline outline-1;
 	}
 
 	.post-header {
@@ -42,25 +42,18 @@ body {
 	}
 
 	.post-body {
-		@apply mt-1 p-2 border-2 border-gray-300 rounded-xl;
+		@apply mt-1 p-2 border-2 rounded-xl;
 	}
 
 	.post-body > pre {
-		@apply font-bold rounded p-1 m-1 bg-gray-300 text-gray-700;
+		@apply font-bold rounded p-1 m-1;
 	}
 
 	.post-tiles {
-		@apply m-8 p-8 border-2 border-gray-300 rounded-2xl grid grid-rows-1 grid-cols-3;
+		@apply m-8 p-8 border-2 rounded-2xl grid grid-rows-1 grid-cols-3;
 	}
 
 	.post-tile {
 		@apply border p-2 m-2;
 	}
-}
-
-.debug-border {
-	border-width: 2px;
-	border-color: red;
-	border-style: dotted;
-	border-spacing: 0;
 }
