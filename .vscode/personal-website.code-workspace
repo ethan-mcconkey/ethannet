@@ -45,7 +45,7 @@
 				"presentation": {
 					"reveal": "always"
 				},
-				"group": "test"
+				"group": "none"
 			},
 			{
 				"label": "prepare gpg",

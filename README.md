@@ -1,7 +1,7 @@
 # Personal Website
 
-[![Deploy to Github Pages](https://github.com/ethan-mcconkey/personal-website/actions/workflows/build-and-deploy-main.yml/badge.svg)](https://github.com/ethan-mcconkey/personal-website/actions/workflows/build-and-deploy-main.yml)
-[![Build Dev Project](https://github.com/ethan-mcconkey/personal-website/actions/workflows/build-dev.yml/badge.svg?branch=dev)](https://github.com/ethan-mcconkey/personal-website/actions/workflows/build-dev.yml)
+[![Build and Test](https://github.com/ethan-mcconkey/personal-website/actions/workflows/dev.yml/badge.svg)](https://github.com/ethan-mcconkey/personal-website/actions/workflows/dev.yml)
+[![Test, Build and Deploy to Github Pages](https://github.com/ethan-mcconkey/personal-website/actions/workflows/main.yml/badge.svg)](https://github.com/ethan-mcconkey/personal-website/actions/workflows/main.yml)
 
 A repository for my personal website which will include some information about me and a blog.
 

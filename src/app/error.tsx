@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Error({
@@ -8,14 +9,14 @@ export default function Error({
 	error: Error & { digest?: string };
 }) {
 	useEffect(() => {
-		console.error(error);
+		console.error(`${error.name} - "${error.message}" (${error.cause})`);
 	}, [error]);
 
 	return (
 		<div>
 			<h2>Something went wrong!</h2>
-			<h3>{error.name}</h3>
 			<p>{error.message}</p>
+			<Link href="/">Go Home?</Link>
 		</div>
 	);
 }

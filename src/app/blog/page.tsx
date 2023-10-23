@@ -13,7 +13,7 @@ export default function Blog() {
 	const posts = getPostsSortedByTitle();
 
 	return (
-		<main className={page} id={page}>
+		<main>
 			<Navbar page={page} />
 			<div className="post-tiles">
 				{posts.map((post) => {

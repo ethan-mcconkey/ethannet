@@ -7,19 +7,23 @@ const createJestConfig = nextJest({
 
 const config: Config = {
 	clearMocks: true,
-	coverageDirectory: "coverage",
-	collectCoverageFrom: [
-		"src/**/*.{ts,tsx}",
-		"!**/node_modules/**",
-		"!**/.next/**",
-		"!**/dist/**",
-	],
+	collectCoverageFrom: ["src/**/*.tsx", "src/lib/*.ts"],
+	coverageThreshold: {
+		global: {
+			lines: 90,
+		},
+	},
 	testEnvironment: "jest-environment-jsdom",
 	moduleDirectories: ["node_modules", "<rootDir>/"],
-	transform: {
-		"^.+\\.(t|j)sx?$": "@swc/jest",
+	moduleNameMapper: {
+		"@/components/(.*)": "<rootDir>/src/components/$1",
+		"@/lib/(.*)": "<rootDir>/src/lib/$1",
 	},
-	extensionsToTreatAsEsm: [".ts", ".tsx", ".jsx"],
+	transform: {
+		"^.+\\.tsx?$": "@swc/jest",
+	},
+	extensionsToTreatAsEsm: [".ts", ".tsx"],
+	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 };
 
 export default createJestConfig(config);

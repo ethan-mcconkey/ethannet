@@ -31,7 +31,7 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"dist/types/**/*.ts",
-		"next.config.js"
+		"next.config.js", "src/lib/__mocks__/posts.js",
 	],
 	"exclude": ["node_modules"]
 }
