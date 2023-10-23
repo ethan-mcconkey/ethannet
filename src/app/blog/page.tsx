@@ -1,6 +1,4 @@
 import Navbar from "@/components/nav-bar";
-import PostTile from "@/components/post-tile";
-import { getPostsSortedByTitle } from "@/lib/posts";
 import { Metadata } from "next";
 
 const page: string = "blog";
@@ -10,13 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-	const posts = getPostsSortedByTitle();
-
 	return (
 		<main className={page} id={page}>
 			<Navbar page={page} />
 			<div className="post-tiles">
-				{posts.map((post) => {
+				{/* {posts.map((post) => {
 					return (
 						<PostTile
 							key={post.id}
@@ -26,7 +22,7 @@ export default function Blog() {
 							publishedDate={post.publishedDate}
 						/>
 					);
-				})}
+				})} */}
 			</div>
 		</main>
 	);
