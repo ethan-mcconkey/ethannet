@@ -8,7 +8,7 @@ export default function PostTile(params: {
 	publishedDate: Date;
 }) {
 	return (
-		<div>
+		<div data-testid="post-tile">
 			<Link href={"blog/" + params.category + "/" + params.id}>
 				<div className="post-tile">
 					<h1 className="post-tile-title">{params.title}</h1>

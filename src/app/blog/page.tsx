@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Blog() {
 	return (
-		<main className={page} id={page}>
+		<main>
 			<Navbar page={page} />
 			<div className="post-tiles">
 				{/* {posts.map((post) => {

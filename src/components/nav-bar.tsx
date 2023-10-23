@@ -2,7 +2,7 @@ import NavItem from "@/components/nav-item";
 
 export default function Navbar(params: { page: string }) {
 	return (
-		<nav className="navbar">
+		<nav className="navbar" data-testid="blog-navbar">
 			<NavItem
 				pageTitle="Home"
 				pageLink="/"
