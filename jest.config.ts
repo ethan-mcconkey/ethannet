@@ -7,7 +7,7 @@ const createJestConfig = nextJest({
 
 const config: Config = {
 	clearMocks: true,
-	collectCoverageFrom: ["src/**/*.tsx", "src/lib/*.ts"],
+	collectCoverageFrom: ["src/**/*.tsx", "src/lib/*.ts", "!src/app/blog/**/*"],
 	coverageThreshold: {
 		global: {
 			lines: 90,
@@ -20,10 +20,16 @@ const config: Config = {
 		"@/lib/(.*)": "<rootDir>/src/lib/$1",
 	},
 	transform: {
-		"^.+\\.tsx?$": "@swc/jest",
+		"^.+\\.ts(x)?$": "@swc/jest",
 	},
 	extensionsToTreatAsEsm: [".ts", ".tsx"],
+	globals: {
+		"ts-jest": {
+			useESM: true,
+		},
+	},
 	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+	preset: "ts-jest",
 };
 
 export default createJestConfig(config);

@@ -5,6 +5,7 @@
         "jest/globals": true
     },
     "extends": [
+        "plugin:testing-library/react",
         "plugin:react/recommended",
         "plugin:jest/recommended",
         "airbnb",

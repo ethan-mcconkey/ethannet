@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Navbar from "@/components/nav-bar";
+import Navbar from "@/components/NavBar";
 
 describe("Navbar", () => {
 	it("renders the 'Home' link as active when 'page' is 'home'", () => {

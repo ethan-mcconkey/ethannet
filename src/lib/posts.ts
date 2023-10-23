@@ -11,6 +11,7 @@ export async function markdownToHtml(markdown: string) {
 
 type Post = {
 	id: string;
+	category: string;
 	title: string;
 	publishedDate: Date;
 	editedDate: Date;
@@ -42,6 +43,7 @@ export function getPost(id: string, category: string): Post {
 	return {
 		id: id,
 		title: data.title,
+		category: category,
 		publishedDate: new Date(data.publishedDate),
 		editedDate: new Date(data.editedDate),
 		content: content,
@@ -64,9 +66,23 @@ export function getPostsByCategory(category: string): Post[] {
 				.toLowerCase()
 				.replace(" ", "-"),
 			title: data.title,
+			category: category,
 			publishedDate: new Date(data.publishedDate),
 			editedDate: new Date(data.editedDate),
 			content: content,
 		};
 	});
+}
+
+export function getAllPosts(): Post[] {
+	let allPosts: Post[] = [];
+	const categories = fs.readdirSync(postsDirectory);
+	categories.forEach((category: string) => {
+		const allPostIds = getPostIdsByCategory(category);
+
+		allPostIds.forEach((postId: string) => {
+			allPosts.push(getPost(postId, category));
+		});
+	});
+	return allPosts;
 }

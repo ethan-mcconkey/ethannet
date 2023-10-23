@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import PostTile from "@/components/post-tile";
+import PostTile from "@/components/PostTile";
 
 describe("PostTile", () => {
 	it("renders post information correctly", () => {

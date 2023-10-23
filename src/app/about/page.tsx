@@ -1,4 +1,4 @@
-import Navbar from "@/components/nav-bar";
+import Navbar from "@/components/NavBar";
 import { Metadata } from "next";
 
 const page: string = "about";

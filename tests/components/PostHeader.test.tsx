@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import PostHeader from "src/components/post-header";
+import PostHeader from "src/components/PostHeader";
 
 describe("PostHeader", () => {
 	const title = "test-title";
