@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { readdirSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
@@ -12,45 +12,61 @@ export async function markdownToHtml(markdown: string) {
 type Post = {
 	id: string;
 	title: string;
-	category: string;
 	publishedDate: Date;
 	editedDate: Date;
 	content: string;
 };
 
 const postsDirectory = path.join(process.cwd(), "static/posts");
-const fileNames = fs.readdirSync(postsDirectory);
-const allPostsData: Post[] = fileNames.map((fileName): Post => {
+export const categories = fs.readdirSync(postsDirectory);
+
+export function getPostIdsByCategory(category: string): string[] {
+	const categoryDirectory = path.join(postsDirectory, category);
+	const postFilenames = readdirSync(categoryDirectory);
+
+	return postFilenames.map((postFilename: string): string => {
+		return postFilename
+			.replace(/\.md$/, "")
+			.toLowerCase()
+			.replace(" ", "-");
+	});
+}
+
+export function getPost(id: string, category: string): Post {
+	const currentDirectory = path.join(postsDirectory, category);
+
 	const { data, content } = matter(
-		fs.readFileSync(path.join(postsDirectory, fileName), "utf8")
+		fs.readFileSync(path.join(currentDirectory, id + ".md"), "utf8")
 	);
 
 	return {
-		id: fileName.replace(/\.md$/, "").toLowerCase().replace(" ", "-"),
+		id: id,
 		title: data.title,
-		category: data.category.toLowerCase().replace(" ", "-"),
 		publishedDate: new Date(data.publishedDate),
 		editedDate: new Date(data.editedDate),
 		content: content,
 	};
-});
-
-export function getPostsSortedByTitle() {
-	return allPostsData.sort((a: Post, b: Post) => {
-		if (a.title > b.title) {
-			return 1;
-		} else {
-			return -1;
-		}
-	});
 }
 
-export function getPostById(id: string): Post {
-	const post = allPostsData.find((post) => id === post.id);
+export function getPostsByCategory(category: string): Post[] {
+	const currentDirectory = path.join(postsDirectory, category);
 
-	if (typeof post !== "undefined") {
-		return post;
-	} else {
-		throw new Error("ID of post does not exist.");
-	}
+	const postFilenames = fs.readdirSync(currentDirectory);
+
+	return postFilenames.map((postFilename: string): Post => {
+		const { data, content } = matter(
+			fs.readFileSync(path.join(currentDirectory, postFilename), "utf8")
+		);
+
+		return {
+			id: postFilename
+				.replace(/\.md$/, "")
+				.toLowerCase()
+				.replace(" ", "-"),
+			title: data.title,
+			publishedDate: new Date(data.publishedDate),
+			editedDate: new Date(data.editedDate),
+			content: content,
+		};
+	});
 }
