@@ -1,4 +1,4 @@
-import NavItem from "@/components/nav-item";
+import NavItem from "@/components/NavItem";
 
 export default function Navbar(params: { page: string }) {
 	return (

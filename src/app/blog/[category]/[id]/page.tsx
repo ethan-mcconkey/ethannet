@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { categories } from "@/lib/posts";
 import { getPostIdsByCategory, getPost } from "@/lib/posts";
 import { toSentenceCase } from "@/lib/string";
-import PostHeader from "@/components/post-header";
-import PostBody from "@/components/post-body";
+import PostHeader from "@/components/PostHeader";
+import PostBody from "@/components/PostBody";
 
 export function generateMetadata({
 	params,

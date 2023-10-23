@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import NavItem from "@/components/nav-item";
+import NavItem from "@/components/NavItem";
 
 describe("NavItem", () => {
 	it("renders an inactive navigation item correctly", () => {

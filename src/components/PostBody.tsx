@@ -1,3 +1,4 @@
+import Markdown from "markdown-to-jsx";
 import { markdownToHtml } from "@/lib/posts";
 
 export default async function PostBody(params: {
@@ -6,9 +7,8 @@ export default async function PostBody(params: {
 	const content = await markdownToHtml(params.content);
 
 	return (
-		<div
-			className="post-body"
-			dangerouslySetInnerHTML={{ __html: content }}
-		/>
+		<article className="prose md:prose-lg">
+			<Markdown>{content}</Markdown>
+		</article>
 	);
 }
