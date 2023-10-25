@@ -1,34 +1,28 @@
 import { Metadata } from "next";
-import { categories, getPostsByCategory } from "@/lib/posts";
 import { toSentenceCase } from "@/lib/string";
+import { categories } from "@/lib/posts";
 
 export function generateMetadata({
-	params,
+    params,
 }: {
-	params: { category: string };
+    params: { category: string };
 }): Metadata {
-	return {
-		title: toSentenceCase(params.category),
-	};
+    return {
+        title: toSentenceCase(params.category),
+    };
 }
 
 export function generateStaticParams() {
-	return categories.map((category: string) => {
-		return { category: category };
-	});
+    return categories.map((category: string) => {
+        return { category: category };
+    });
 }
 
-export default function Category({
-	params,
-}: {
-	params: { category: string };
-}): JSX.Element {
-	const posts = getPostsByCategory(params.category);
-
-	return (
-		<>
-			<header></header>
-			<main></main>
-		</>
-	);
+export default function Category(): JSX.Element {
+    return (
+        <>
+            <header></header>
+            <main></main>
+        </>
+    );
 }

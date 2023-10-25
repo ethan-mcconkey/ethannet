@@ -2,13 +2,13 @@ import Markdown from "markdown-to-jsx";
 import { markdownToHtml } from "@/lib/posts";
 
 export default async function PostBody(params: {
-	content: string;
+    content: string;
 }): Promise<JSX.Element> {
-	const content = await markdownToHtml(params.content);
+    const content = await markdownToHtml(params.content);
 
-	return (
-		<article className="prose md:prose-lg">
-			<Markdown>{content}</Markdown>
-		</article>
-	);
+    return (
+        <article className="prose md:prose-lg">
+            <Markdown>{content}</Markdown>
+        </article>
+    );
 }

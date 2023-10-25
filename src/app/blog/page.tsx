@@ -1,36 +1,52 @@
-import Navbar from "@/components/NavBar";
-import PostTile from "@/components/PostTile";
-import { getAllPosts } from "@/lib/posts";
 import { Metadata } from "next";
 
-const page: string = "blog";
+import Navbar from "@/components/NavBar";
+import PostTile from "@/components/PostTile";
+import { categories, getPostsByCategory } from "@/lib/posts";
 
 export const metadata: Metadata = {
-	title: "My Blog",
+    title: "My Blog",
 };
 
 export default function Blog() {
-	const posts = getAllPosts();
+    return (
+        <>
+            <Navbar currentPage="blog" redirectPage="/" />
+            <main>
+                <div>
+                    {categories.map((category) => {
+                        const posts = getPostsByCategory(category);
 
-	return (
-		<>
-			<Navbar page={page} />
-			<header></header>
-			<main>
-				<div className="post-tiles">
-					{posts.map((post) => {
-						return (
-							<PostTile
-								key={post.id}
-								id={post.id}
-								category={post.category}
-								title={post.title}
-								publishedDate={post.publishedDate}
-							/>
-						);
-					})}
-				</div>
-			</main>
-		</>
-	);
+                        const sortedPosts = posts.sort((a, b) => {
+                            if (a.publishedDate > b.publishedDate) {
+                                return -1;
+                            } else {
+                                return 1;
+                            }
+                        });
+
+                        const limitedPosts = sortedPosts.slice(0, 3);
+
+                        if (posts.length > 0) {
+                            return (
+                                <div key={category} className="category">
+                                    <h1>{category.toUpperCase()}</h1>
+                                    <div className="tiles">
+                                        {limitedPosts.map((post) => {
+                                            return (
+                                                <PostTile
+                                                    key={post.id}
+                                                    {...post}
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            );
+                        }
+                    })}
+                </div>
+            </main>
+        </>
+    );
 }

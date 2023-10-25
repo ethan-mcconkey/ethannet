@@ -1,18 +1,25 @@
-import "./globals.css";
 import type { Metadata } from "next";
+import React from "react";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Ethan's Website",
+    title: "Ethan's Website",
 };
 
 export default function RootLayout({
-	children,
+    children,
 }: {
-	children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-	return (
-		<html data-testid="layout-html" lang="en">
-			<body data-testid="layout-body">{children}</body>
-		</html>
-	);
+    return (
+        <html lang="en">
+            <body>
+                {children}
+                <footer>
+                    {"\u00A9"} 2023 Ethan McConkey. All Rights Reserved
+                </footer>
+            </body>
+        </html>
+    );
 }
