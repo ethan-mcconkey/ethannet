@@ -45,7 +45,14 @@
             "css",
             "blog"
         ],
-        "cSpell.words": ["Josefin", "rehype", "testid"]
+        "cSpell.words": [
+            "bordercolour",
+            "Josefin",
+            "navicon",
+            "navitem",
+            "rehype",
+            "testid"
+        ]
     },
     "tasks": {
         "version": "2.0.0",

@@ -1,32 +1,27 @@
 @tailwind base;
 @tailwind components;
-
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@tailwind utilities;
 
 @layer base {
-    body {
-        font-family: "Josefin Sans", sans-serif;
-    }
-
     main {
         @apply p-4 m-0;
-    }
-
-    footer {
-        @apply p-1 border-t-[3px] border-gray-400 fixed bottom-0 w-[100%] select-none;
     }
 }
 
 @layer components {
-    .navbar {
-        @apply grid grid-cols-3 gap-4 border-b-[3px] border-gray-400 p-1 pr-[85%] text-sm font-bold select-none;
-    }
-
     .navitem {
-        @apply text-center shadow-sm shadow-gray-500 rounded-sm border-[1px] border-gray-600;
+        @apply p-0 m-0;
     }
 
-    .navitem-active {
-        @apply navitem;
+    .navitem:hover {
+        @apply shadow-sm shadow-gray-600 rounded-md;
+    }
+
+    .navicon {
+        @apply text-[48px];
+    }
+
+    .tooltip {
+        @apply h-auto w-[48px] scale-0 absolute top-[50px] text-center text-base justify-center;
     }
 }

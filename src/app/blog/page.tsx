@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Blog() {
     return (
         <>
-            <Navbar currentPage="blog" redirectPage="/" />
+            <Navbar />
             <main>
                 <div>
                     {categories.map((category) => {

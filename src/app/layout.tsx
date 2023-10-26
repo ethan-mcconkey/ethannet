@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import React from "react";
+import { Josefin_Sans } from "next/font/google";
 
 import "./globals.css";
+import { Providers } from "@/components/Providers";
+
+const josefinSans = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Ethan's Website",
+    viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -14,11 +19,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
-                {children}
-                <footer>
-                    {"\u00A9"} 2023 Ethan McConkey. All Rights Reserved
-                </footer>
+            <body className={`${josefinSans.className} h-screen`}>
+                <Providers>{children}</Providers>
             </body>
         </html>
     );
