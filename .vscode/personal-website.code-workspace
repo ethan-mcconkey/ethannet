@@ -1,63 +1,84 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {
-		"conventionalCommits.scopes": [
-			"vs code",
-			"src",
-			"test",
-			"node",
-			"next",
-			"github",
-			"git",
-			"typescript",
-			"css",
-			"blog"
-		],
-		"files.associations": {
-			"**/*.css": "tailwindcss"
-		},
-		"cSpell.words": ["Josefin", "rehype", "testid"]
-	},
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": [
-			{
-				"label": "build",
-				"command": "npm run build",
-				"type": "shell",
-				"args": [],
-				"problemMatcher": ["$tsc"],
-				"presentation": {
-					"reveal": "always"
-				},
-				"group": "build"
-			},
-			{
-				"label": "run",
-				"command": "npm run dev",
-				"type": "shell",
-				"args": [],
-				"problemMatcher": ["$tsc"],
-				"presentation": {
-					"reveal": "always"
-				},
-				"group": "none"
-			},
-			{
-				"label": "prepare gpg",
-				"command": "echo \"test\" | gpg --clearsign",
-				"type": "shell",
-				"args": [],
-				"problemMatcher": ["$tsc"],
-				"presentation": {
-					"reveal": "always"
-				},
-				"group": "none"
-			}
-		]
-	}
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "tailwindCSS.includeLanguages": {
+            "html": "html",
+            "javascript": "javascript",
+            "css": "css"
+        },
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "[javascript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[scss]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "stylelint.validate": ["css", "scss"],
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        },
+        "conventionalCommits.scopes": [
+            "vs code",
+            "src",
+            "test",
+            "node",
+            "next",
+            "github",
+            "git",
+            "typescript",
+            "css",
+            "blog"
+        ],
+        "cSpell.words": [
+            "bordercolour",
+            "Josefin",
+            "navicon",
+            "navitem",
+            "rehype",
+            "testid"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "command": "npm run build:local",
+                "type": "shell",
+                "args": [],
+                "problemMatcher": ["$tsc"],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "group": "build"
+            },
+            {
+                "label": "prepare gpg",
+                "command": "echo \"test\" | gpg --clearsign",
+                "type": "shell",
+                "args": [],
+                "problemMatcher": ["$tsc"],
+                "presentation": {
+                    "reveal": "always"
+                },
+                "group": "none"
+            }
+        ]
+    }
 }

@@ -2,58 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@layer base {
+    html {
+        @apply m-0 h-[100%];
+    }
 
-body {
-	font-family: "Josefin Sans", sans-serif;
+    body {
+        @apply w-[100%] dark:bg-gradient-to-tr dark:from-sky-700 dark:via-cyan-800 dark:to-blue-600 dark:bg-cover dark:bg-no-repeat dark:bg-center;
+    }
+
+    main {
+        @apply p-4 m-0;
+    }
+
+    nav {
+        @apply h-[50px] flex flex-row float-right rounded-bl-lg gap-2 p-1 m-0 justify-center items-center dark:bg-gray-400 dark:shadow-[0px_2px_35px_4px] dark:shadow-gray-400;
+    }
 }
 
 @layer components {
-	.navbar {
-		@apply border-solid border-spacing-1 border-b-[3px] grid grid-cols-3 p-1 pr-[85%];
-	}
+    .navitem {
+        @apply relative p-0 m-0;
+    }
 
-	.nav-item {
-		@apply font-[10px] text-center;
-	}
+    .navitem:hover {
+        @apply shadow-sm shadow-gray-600 rounded-md;
+    }
 
-	.nav-item:is(:hover, :focus) {
-		@apply font-bold;
-	}
+    .navicon {
+        @apply text-[48px];
+    }
 
-	.active-nav-item {
-		@apply nav-item outline outline-1;
-	}
+    .tooltip {
+        @apply w-[48px] scale-0 absolute text-center text-base justify-center text-black font-bold backdrop-blur-[1px] m-auto p-0 rounded-sm;
+    }
 
-	.post-header {
-		@apply flex flex-col justify-center;
-	}
+    .categories {
+        @apply mt-[48px] flex flex-col gap-4;
+    }
 
-	.post-title {
-		@apply text-center font-bold underline underline-offset-2 text-xl;
-	}
+    .category {
+        @apply border-[3px] rounded-lg dark:border-white;
+    }
 
-	.post-dates {
-		@apply italic text-[14px] pb-1;
-	}
+    .category > h1 {
+        @apply font-bold text-[25px] text-center pt-1 pb-1;
+    }
 
-	.post-header > hr {
-		@apply border-4;
-	}
+    .category > hr {
+        @apply border-[2px] dark:border-white;
+    }
 
-	.post-body {
-		@apply mt-1 p-2 border-2 rounded-xl;
-	}
+    .tiles {
+        @apply p-4 flex flex-wrap items-center  gap-8;
+    }
 
-	.post-body > pre {
-		@apply font-bold rounded p-1 m-1;
-	}
+    .tile {
+        @apply w-auto h-auto p-4 shadow-[0px_0px_10px_1px] rounded-xl flex flex-col items-center justify-center;
+    }
 
-	.post-tiles {
-		@apply m-8 p-8 border-2 rounded-2xl grid grid-rows-1 grid-cols-3;
-	}
+    .tile:hover {
+        @apply shadow-[inset_0px_0px_10px_1px];
+    }
 
-	.post-tile {
-		@apply border p-2 m-2;
-	}
+    .tile > h1 {
+        @apply font-bold underline underline-offset-2;
+    }
+
+    .tile > p {
+        @apply italic;
+    }
 }

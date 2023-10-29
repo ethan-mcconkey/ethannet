@@ -1,23 +1,19 @@
-import NavItem from "@/components/NavItem";
+import Link from "next/link";
+import DarkModeButton from "./DarkModeButton";
+import { BiHomeAlt2, BiPencil } from "react-icons/bi";
 
-export default function Navbar(params: { page: string }) {
-	return (
-		<nav className="navbar" data-testid="blog-navbar">
-			<NavItem
-				pageTitle="Home"
-				pageLink="/"
-				isActive={params.page === "home"}
-			/>
-			<NavItem
-				pageTitle="Blog"
-				pageLink="/blog"
-				isActive={params.page === "blog"}
-			/>
-			<NavItem
-				pageTitle="About"
-				pageLink="/about"
-				isActive={params.page === "about"}
-			/>
-		</nav>
-	);
+export default function Navbar() {
+    return (
+        <nav>
+            <Link className="navitem group" href="/">
+                <BiHomeAlt2 className="navicon group-hover:text-[49px]" />
+            </Link>
+            <Link className="navitem group" href="/blog">
+                <BiPencil className="navicon group-hover:text-[49px]" />
+            </Link>
+            <div className="h-[48px] navitem group">
+                <DarkModeButton />
+            </div>
+        </nav>
+    );
 }
