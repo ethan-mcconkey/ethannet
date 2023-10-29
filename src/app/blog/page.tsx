@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
-import Navbar from "@/components/NavBar";
 import PostTile from "@/components/PostTile";
 import { categories, getPostsByCategory } from "@/lib/posts";
+import Navbar from "@/components/NavBar";
+import CopyrightFooter from "@/components/CopyrightFooter";
 
 export const metadata: Metadata = {
     title: "My Blog",
@@ -13,7 +14,7 @@ export default function Blog() {
         <>
             <Navbar />
             <main>
-                <div>
+                <div className="categories">
                     {categories.map((category) => {
                         const posts = getPostsByCategory(category);
 
@@ -25,12 +26,13 @@ export default function Blog() {
                             }
                         });
 
-                        const limitedPosts = sortedPosts.slice(0, 3);
+                        const limitedPosts = sortedPosts.slice(0, 10);
 
                         if (posts.length > 0) {
                             return (
                                 <div key={category} className="category">
                                     <h1>{category.toUpperCase()}</h1>
+                                    <hr />
                                     <div className="tiles">
                                         {limitedPosts.map((post) => {
                                             return (
@@ -47,6 +49,7 @@ export default function Blog() {
                     })}
                 </div>
             </main>
+            <CopyrightFooter />
         </>
     );
 }

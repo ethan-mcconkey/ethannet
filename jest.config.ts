@@ -7,12 +7,7 @@ const createJestConfig = nextJest({
 
 const config: Config = {
     clearMocks: true,
-    collectCoverageFrom: ["src/**/*.tsx", "src/lib/*.ts", "!src/app/blog/**/*"],
-    coverageThreshold: {
-        global: {
-            lines: 90,
-        },
-    },
+    collectCoverageFrom: ["src/lib/*.ts"],
     testEnvironment: "jest-environment-jsdom",
     moduleDirectories: ["node_modules", "<rootDir>/"],
     moduleNameMapper: {

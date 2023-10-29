@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${josefinSans.className} h-screen`}>
+            <body className={josefinSans.className}>
                 <Providers>{children}</Providers>
             </body>
         </html>
