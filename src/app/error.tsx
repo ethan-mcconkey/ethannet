@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Error({
     error,
 }: {
-    error: Error & { digest?: string };
+    error: Error & { digest?: string }
 }) {
-    console.error(`${error.name} - "${error.message}"`);
+    console.error(`${error.name} - "${error.message}"`)
 
     return (
         <div>
@@ -15,5 +15,5 @@ export default function Error({
             <p>{error.message}</p>
             <Link href="/">Go Home?</Link>
         </div>
-    );
+    )
 }

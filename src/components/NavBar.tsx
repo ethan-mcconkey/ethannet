@@ -1,6 +1,6 @@
-import Link from "next/link";
-import DarkModeButton from "./DarkModeButton";
-import { BiHomeAlt2, BiPencil } from "react-icons/bi";
+import Link from 'next/link'
+import DarkModeButton from './DarkModeButton'
+import { BiHomeAlt2, BiPencil } from 'react-icons/bi'
 
 export default function Navbar() {
     return (
@@ -15,5 +15,5 @@ export default function Navbar() {
                 <DarkModeButton />
             </div>
         </nav>
-    );
+    )
 }

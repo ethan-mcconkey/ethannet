@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
     push:
-        branches-ignore: ["main"]
+        branches-ignore: ['main']
     workflow_dispatch:
 
 permissions:
@@ -10,7 +10,7 @@ permissions:
     id-token: write
 
 concurrency:
-    group: "build"
+    group: 'build'
     cancel-in-progress: false
 
 jobs:
@@ -22,12 +22,12 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
-                  node-version: "18.18.0"
+                  node-version: '18.18.0'
                   cache: npm
             - name: Install Dependencies
               run: npm ci
             - name: Test
-              run: "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+              run: 'node --experimental-vm-modules node_modules/jest/bin/jest.js'
     build:
         runs-on: ubuntu-latest
         steps:
@@ -36,7 +36,7 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
-                  node-version: "18.18.0"
+                  node-version: '18.18.0'
                   cache: npm
             - name: Install Dependencies
               run: npm ci

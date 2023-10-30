@@ -1,13 +1,13 @@
-import { Metadata } from "next";
+import { Metadata } from 'next'
 
-import PostTile from "@/components/PostTile";
-import { categories, getPostsByCategory } from "@/lib/posts";
-import Navbar from "@/components/NavBar";
-import CopyrightFooter from "@/components/CopyrightFooter";
+import PostTile from '@/components/PostTile'
+import { categories, getPostsByCategory } from '@/lib/posts'
+import Navbar from '@/components/NavBar'
+import CopyrightFooter from '@/components/CopyrightFooter'
 
 export const metadata: Metadata = {
-    title: "My Blog",
-};
+    title: 'My Blog',
+}
 
 export default function Blog() {
     return (
@@ -16,17 +16,17 @@ export default function Blog() {
             <main>
                 <div className="categories">
                     {categories.map((category) => {
-                        const posts = getPostsByCategory(category);
+                        const posts = getPostsByCategory(category)
 
                         const sortedPosts = posts.sort((a, b) => {
                             if (a.publishedDate > b.publishedDate) {
-                                return -1;
+                                return -1
                             } else {
-                                return 1;
+                                return 1
                             }
-                        });
+                        })
 
-                        const limitedPosts = sortedPosts.slice(0, 10);
+                        const limitedPosts = sortedPosts.slice(0, 10)
 
                         if (posts.length > 0) {
                             return (
@@ -40,16 +40,16 @@ export default function Blog() {
                                                     key={post.id}
                                                     {...post}
                                                 />
-                                            );
+                                            )
                                         })}
                                     </div>
                                 </div>
-                            );
+                            )
                         }
                     })}
                 </div>
             </main>
             <CopyrightFooter />
         </>
-    );
+    )
 }

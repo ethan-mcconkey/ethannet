@@ -1,12 +1,12 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
-            userAgent: "*",
-            allow: ["/", "/blog", "/about"],
-            disallow: "/blog/*",
+            userAgent: '*',
+            allow: ['/', '/blog'],
+            disallow: '/blog/*',
         },
-        sitemap: "https://www.ethannet.me/sitemap.xml",
-    };
+        sitemap: 'https://www.ethannet.me/sitemap.xml',
+    }
 }
