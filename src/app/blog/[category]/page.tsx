@@ -1,21 +1,21 @@
-import { Metadata } from "next";
-import { toSentenceCase } from "@/lib/string";
-import { categories } from "@/lib/posts";
+import { Metadata } from 'next'
+import { toSentenceCase } from '@/lib/string'
+import { categories } from '@/lib/posts'
 
 export function generateMetadata({
     params,
 }: {
-    params: { category: string };
+    params: { category: string }
 }): Metadata {
     return {
         title: toSentenceCase(params.category),
-    };
+    }
 }
 
 export function generateStaticParams() {
     return categories.map((category: string) => {
-        return { category: category };
-    });
+        return { category: category }
+    })
 }
 
 export default function Category(): JSX.Element {
@@ -24,5 +24,5 @@ export default function Category(): JSX.Element {
             <header></header>
             <main></main>
         </>
-    );
+    )
 }

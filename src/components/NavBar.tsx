@@ -1,10 +1,10 @@
-import Link from "next/link";
-import DarkModeButton from "./DarkModeButton";
-import { BiHomeAlt2, BiPencil } from "react-icons/bi";
+import Link from 'next/link'
+import DarkModeButton from './DarkModeButton'
+import { BiHomeAlt2, BiPencil } from 'react-icons/bi'
 
 export default function Navbar() {
     return (
-        <nav>
+        <nav className="absolute right-0">
             <Link className="navitem group" href="/">
                 <BiHomeAlt2 className="navicon group-hover:text-[49px]" />
             </Link>
@@ -15,5 +15,5 @@ export default function Navbar() {
                 <DarkModeButton />
             </div>
         </nav>
-    );
+    )
 }

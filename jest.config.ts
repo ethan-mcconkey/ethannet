@@ -1,30 +1,31 @@
-import type { Config } from "jest";
-import nextJest from "next/jest";
+import type { Config } from 'jest'
+import nextJest from 'next/jest'
 
 const createJestConfig = nextJest({
-    dir: "./",
-});
+    dir: './',
+})
 
 const config: Config = {
+    roots: ['<rootDir>/tests'],
     clearMocks: true,
-    collectCoverageFrom: ["src/lib/*.ts"],
-    testEnvironment: "jest-environment-jsdom",
-    moduleDirectories: ["node_modules", "<rootDir>/"],
+    collectCoverageFrom: ['src/lib/*.ts'],
+    testEnvironment: 'jest-environment-jsdom',
+    moduleDirectories: ['node_modules', '<rootDir>/'],
     moduleNameMapper: {
-        "@/components/(.*)": "<rootDir>/src/components/$1",
-        "@/lib/(.*)": "<rootDir>/src/lib/$1",
+        '@/components/(.*)': '<rootDir>/src/components/$1',
+        '@/lib/(.*)': '<rootDir>/src/lib/$1',
     },
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     transform: {
-        "^.+\\.ts(x)?$": "@swc/jest",
+        '^.+\\.tsx?$': 'ts-jest',
     },
-    extensionsToTreatAsEsm: [".ts", ".tsx"],
+    extensionsToTreatAsEsm: ['.ts', '.tsx'],
     globals: {
-        "ts-jest": {
+        'ts-jest': {
             useESM: true,
         },
     },
-    setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-    preset: "ts-jest",
-};
+    preset: 'ts-jest',
+}
 
-export default createJestConfig(config);
+export default createJestConfig(config)

@@ -1,14 +1,14 @@
-import Markdown from "markdown-to-jsx";
-import { markdownToHtml } from "@/lib/posts";
+import Markdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
 
-export default async function PostBody(params: {
-    content: string;
-}): Promise<JSX.Element> {
-    const content = await markdownToHtml(params.content);
-
+export default function PostBody(params: { content: string }): JSX.Element {
     return (
-        <article className="prose md:prose-lg">
-            <Markdown>{content}</Markdown>
-        </article>
-    );
+        <>
+            <div className="max-w-[60%] flex flex-col gap-2">
+                <Markdown rehypePlugins={[rehypeHighlight]}>
+                    {params.content}
+                </Markdown>
+            </div>
+        </>
+    )
 }

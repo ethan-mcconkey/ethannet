@@ -1,4 +1,4 @@
-import { BiSearchAlt2 } from "react-icons/bi";
+import { BiSearchAlt2 } from 'react-icons/bi'
 
 export default function Search() {
     return (
@@ -8,5 +8,5 @@ export default function Search() {
                 <input type="text" placeholder="Search" />
             </div>
         </>
-    );
+    )
 }
