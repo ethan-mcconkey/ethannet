@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "prettier --check . && stylelint --allow-empty-input \"**/*.css\" && next build",
+        "build": "next build",
         "build:local": "prettier --write . && stylelint --allow-empty-input \"**/*.css\" && next build",
         "lint": "prettier --check . && stylelint --allow-empty-input \"**/*.css\" && next lint",
         "format": "prettier --write .",
