@@ -4,6 +4,8 @@ import { getPostIdsByCategory, getPost } from '@/lib/posts'
 import { toSentenceCase } from '@/lib/string'
 import PostHeader from '@/components/PostHeader'
 import PostBody from '@/components/PostBody'
+import Navbar from '@/components/NavBar'
+import CopyrightFooter from '@/components/CopyrightFooter'
 
 export function generateMetadata({
     params,
@@ -33,22 +35,20 @@ export function generateStaticParams() {
 export default function Category({
     params,
 }: {
-    params: { category: string; id: string }
+    params: { id: string; category: string }
 }): JSX.Element {
     const post = getPost(params.id, params.category)
 
     return (
         <>
             <header>
-                <PostHeader
-                    title={post.title}
-                    publishedDate={post.publishedDate}
-                    editedDate={post.editedDate}
-                />
+                <Navbar />
+                <PostHeader {...post} />
             </header>
-            <main>
+            <main className="flex items-center justify-center">
                 <PostBody content={post.content} />
             </main>
+            <CopyrightFooter />
         </>
     )
 }

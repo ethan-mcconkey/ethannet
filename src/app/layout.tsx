@@ -3,6 +3,8 @@ import React from 'react'
 import { Josefin_Sans } from 'next/font/google'
 
 import './globals.css'
+import 'highlight.js/styles/github-dark.css'
+
 import { Providers } from '@/components/Providers'
 
 const josefinSans = Josefin_Sans({ subsets: ['latin'] })
@@ -24,7 +26,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={josefinSans.className}>
+            <body className={` ${josefinSans.className}`}>
                 <Providers>{children}</Providers>
             </body>
         </html>

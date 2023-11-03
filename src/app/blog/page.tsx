@@ -12,7 +12,9 @@ export const metadata: Metadata = {
 export default function Blog() {
     return (
         <>
-            <Navbar />
+            <header>
+                <Navbar />
+            </header>
             <main>
                 <div className="categories">
                     {categories.map((category) => {

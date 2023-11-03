@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function PostTile(props: {
     id: string
-    title: string
     category: string
+    title: string
     publishedDate: Date
 }) {
     return (

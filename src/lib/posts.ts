@@ -10,31 +10,29 @@ export async function markdownToHtml(markdown: string) {
     return result.toString()
 }
 
-const postConstructor = (
-    id: string,
-    category: string,
-    title: string,
-    publishedDate: Date,
-    editedDate: Date,
-    content: string
-) => {
-    return {
-        id: id,
-        category: category,
-        title: title,
-        publishedDate: publishedDate,
-        editedDate: editedDate,
-        content: content,
-    }
-}
-
-type Post = {
+export class Post {
     id: string
     category: string
     title: string
     publishedDate: Date
     editedDate: Date
     content: string
+
+    constructor(
+        id: string,
+        category: string,
+        title: string,
+        publishedDate: Date,
+        editedDate: Date,
+        content: string
+    ) {
+        this.id = id
+        this.category = category
+        this.title = title
+        this.publishedDate = publishedDate
+        this.editedDate = editedDate
+        this.content = content
+    }
 }
 
 const postsDirectory = path.join(process.cwd(), 'public/posts')
@@ -62,7 +60,7 @@ export function getPost(id: string, category: string): Post {
         fs.readFileSync(path.join(currentDirectory, id + '.md'), 'utf8')
     )
 
-    return postConstructor(
+    return new Post(
         id,
         data.category,
         data.title,
@@ -82,7 +80,7 @@ export function getPostsByCategory(category: string): Post[] {
             fs.readFileSync(path.join(currentDirectory, postFilename), 'utf8')
         )
 
-        return postConstructor(
+        return new Post(
             postFilename.replace(/\.md$/, '').toLowerCase().replace(' ', '-'),
             category,
             data.title,
