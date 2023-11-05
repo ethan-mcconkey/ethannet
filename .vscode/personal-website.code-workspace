@@ -1,7 +1,16 @@
 {
     "folders": [
         {
-            "path": ".."
+            "path": "..",
+            "name": "Personal Website"
+        },
+        {
+            "path": "../public/posts",
+            "name": "Posts"
+        },
+        {
+            "path": "../public/images/posts",
+            "name": "Post Images"
         }
     ],
     "settings": {
@@ -67,17 +76,6 @@
                     "reveal": "always"
                 },
                 "group": "build"
-            },
-            {
-                "label": "prepare gpg",
-                "command": "echo \"test\" | gpg --clearsign",
-                "type": "shell",
-                "args": [],
-                "problemMatcher": ["$tsc"],
-                "presentation": {
-                    "reveal": "always"
-                },
-                "group": "none"
             }
         ]
     }

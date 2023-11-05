@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ESNext",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
@@ -34,7 +34,9 @@
         "dist/types/**/*.ts",
         "next.config.ts",
         "tailwind.config.ts",
-        "postcss.config.cjs"
+        "postcss.config.cjs",
+        "src/lib/posts.ts",
+        "tests/lib/posts.test.ts"
     ],
     "exclude": ["node_modules"]
 }

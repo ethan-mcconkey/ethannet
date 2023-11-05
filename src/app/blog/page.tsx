@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
 
-import PostTile from '@/components/PostTile'
-import { categories, getPostsByCategory } from '@/lib/posts'
 import Navbar from '@/components/NavBar'
 import CopyrightFooter from '@/components/CopyrightFooter'
 
@@ -17,7 +15,7 @@ export default function Blog() {
             </header>
             <main>
                 <div className="categories">
-                    {categories.map((category) => {
+                    {/* {categories.map((category) => {
                         const posts = getPostsByCategory(category)
 
                         const sortedPosts = posts.sort((a, b) => {
@@ -48,7 +46,7 @@ export default function Blog() {
                                 </div>
                             )
                         }
-                    })}
+                    })} */}
                 </div>
             </main>
             <CopyrightFooter />
