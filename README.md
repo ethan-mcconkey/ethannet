@@ -7,20 +7,13 @@ A repository for my personal website which will include some information about m
 
 ## Tailwind Colours
 
-### Light Mode
-
-| Identity             | Tailwind Colour |
-| :------------------- | --------------: |
-| Main Text Colour     |                 |
-| Main BG Colour       |                 |
-| Inv Main Text Colour |        gray-200 |
-| Inv Main BG Colour   |        blue-700 |
-
-### Dark Mode
-
-| Identity             | Tailwind Colour |
-| :------------------- | --------------: |
-| Main Text Colour     |                 |
-| Main BG Colour       |                 |
-| Inv Main Text Colour |        gray-500 |
-| Inv Main BG Colour   |        blue-400 |
+| Identity                  | Tailwind Colour |
+| :------------------------ | --------------: |
+| Dark Text Colour          |           white |
+| Dark BG Colour            |       slate-800 |
+| Dark Inverse BG Colour    |                 |
+| Dark Inverse Text Colour  |                 |
+| Light Text Colour         |           black |
+| Light BG Colour           |       slate-300 |
+| Light Inverse BG Colour   |                 |
+| Light Inverse Text Colour |                 |

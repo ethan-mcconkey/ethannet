@@ -5,78 +5,34 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 @layer base {
-    html {
-        @apply m-0 h-[100%];
-    }
-
-    body {
-        @apply w-[100%] dark:bg-gradient-to-tr dark:from-sky-700 dark:via-cyan-800 dark:to-blue-600 dark:bg-cover dark:bg-no-repeat dark:bg-center;
-    }
-
     main {
         @apply p-4 m-0;
-    }
-
-    nav {
-        @apply h-[50px] flex flex-row float-right rounded-bl-lg gap-2 p-1 m-0 justify-center items-center dark:bg-gray-400 dark:shadow-[0px_2px_35px_4px] dark:shadow-gray-400;
     }
 
     code {
         font-family: 'JetBrains Mono', monospace;
         @apply rounded-md;
     }
+
+    .prose-with-reset {
+        @apply prose prose-headings:m-0 prose-p:m-0 prose-headings:mb-8 prose-headings:mt-4 prose-p:mb-4;
+    }
 }
 
 @layer components {
     .navitem {
-        @apply relative p-0 m-0;
+        @apply flex flex-row text-center gap-1 p-1;
     }
 
     .navitem:hover {
-        @apply shadow-sm shadow-gray-600 rounded-md;
+        @apply rounded-lg dark:bg-slate-600 bg-slate-500/60;
+    }
+
+    .navitem p {
+        @apply font-bold text-xl;
     }
 
     .navicon {
-        @apply text-[48px];
-    }
-
-    .tooltip {
-        @apply w-[48px] scale-0 absolute text-center text-base justify-center text-black font-bold backdrop-blur-[1px] m-auto p-0 rounded-sm;
-    }
-
-    .categories {
-        @apply mt-[48px] flex flex-col gap-4;
-    }
-
-    .category {
-        @apply border-[3px] rounded-lg dark:border-white;
-    }
-
-    .category > h1 {
-        @apply font-bold text-[25px] text-center pt-1 pb-1;
-    }
-
-    .category > hr {
-        @apply border-[2px] dark:border-white;
-    }
-
-    .tiles {
-        @apply p-4 flex flex-wrap items-center  gap-8;
-    }
-
-    .tile {
-        @apply w-auto h-auto p-4 shadow-[0px_0px_10px_1px] rounded-xl flex flex-col items-center justify-center;
-    }
-
-    .tile:hover {
-        @apply shadow-[inset_0px_0px_10px_1px];
-    }
-
-    .tile > h1 {
-        @apply font-bold underline underline-offset-2;
-    }
-
-    .tile > p {
-        @apply italic;
+        @apply text-center text-2xl;
     }
 }

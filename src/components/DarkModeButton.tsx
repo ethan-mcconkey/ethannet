@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { BiMoon, BiSun } from 'react-icons/bi'
 
-const DarkModeButton = (props: { className?: string }) => {
+const DarkModeButton = () => {
     const [mounted, setMounted] = useState(false)
     const { systemTheme, theme, setTheme } = useTheme()
 
@@ -25,16 +25,21 @@ const DarkModeButton = (props: { className?: string }) => {
 
     return (
         <button
-            className={props.className}
             onClick={() => {
                 return theme === 'dark' ? setTheme('light') : setTheme('dark')
             }}
+            className="w-16 h-8 rounded-full p-1 pr-2 bg-slate-400 dark:bg-slate-700 relative transition-colors duration-200 ease-in outline-none ring-2 ring-black dark:ring-white border-transparent"
         >
-            {theme === 'dark' ? (
-                <BiSun className="navicon group-hover:text-[49px] text-yellow-400" />
-            ) : (
-                <BiMoon className="navicon group-hover:text-[49px] text-gray-100" />
-            )}
+            <div
+                id="toggle"
+                className="rounded-full w-[1.125rem] h-[1.125rem] relative ml-0 dark:ml-9 pointer-events-none transition-duration-100 ease-out text-lg"
+            >
+                {theme === 'dark' ? (
+                    <BiMoon className="text-white" />
+                ) : (
+                    <BiSun className="text-yellow-400" />
+                )}
+            </div>
         </button>
     )
 }

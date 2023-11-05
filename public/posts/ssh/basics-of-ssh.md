@@ -26,15 +26,15 @@ Select **OpenSSH Client** on the connecting computer and **OpenSSH Server** on t
 On the connecting machine run the following:
 
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install openssh-client
+sudo apt-get update
+sudo apt-get install openssh-client
 ```
 
 On the host machine run the following:
 
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install openssh-server
+sudo apt-get update
+sudo apt-get install openssh-server
 ```
 
 # SSH Server
