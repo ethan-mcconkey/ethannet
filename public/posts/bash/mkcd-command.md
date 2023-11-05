@@ -1,8 +1,6 @@
 ---
 title: 'MKCD Command on linux'
-category: 'bash'
-publishedDate: '06-10-2023'
-editedDate: '06-10-2023'
+date: '06-10-2023'
 ---
 
 The mkcd command is a custom command that creates a new directory and then changes directories into it. Similar to running the following.

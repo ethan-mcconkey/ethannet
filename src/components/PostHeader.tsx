@@ -1,17 +1,13 @@
 import { formatDate } from '@/lib/date'
 
-export default function PostHeader(props: {
+export default function PostHeader(params: {
     title: string
-    publishedDate: Date
-    editedDate: Date
+    date: Date
 }): JSX.Element {
     return (
         <div>
-            <h1>{props.title}</h1>
-            <p>
-                Published on: {formatDate(props.publishedDate)} | Edited on:{' '}
-                {formatDate(props.editedDate)}
-            </p>
+            <h1>{params.title}</h1>
+            <p>{formatDate(params.date)}</p>
             <hr />
         </div>
     )
