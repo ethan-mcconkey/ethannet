@@ -61,6 +61,7 @@ export default function RootLayout({
                                 className="flex flex-row gap-1"
                                 href="https://github.com/ethan-mcconkey"
                                 title="Go to my GitHub page."
+                                target="_blank"
                             >
                                 <FaGithub />
                                 <p>GitHub</p>
@@ -69,6 +70,7 @@ export default function RootLayout({
                                 className="flex flex-row gap-1"
                                 href="https://www.linkedin.com/in/ethan-mcconkey-635702263/"
                                 title="Go to my LinkedIn page."
+                                target="_blank"
                             >
                                 <FaLinkedin />
                                 <p>LinkedIn</p>
