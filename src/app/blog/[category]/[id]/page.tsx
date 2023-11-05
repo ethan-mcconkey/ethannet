@@ -2,8 +2,6 @@ import { Metadata } from 'next'
 import { toSentenceCase } from '@/lib/string'
 import PostHeader from '@/components/PostHeader'
 import PostBody from '@/components/PostBody'
-import Navbar from '@/components/NavBar'
-import CopyrightFooter from '@/components/CopyrightFooter'
 import { getPost, getPostMetadata, staticRoutes } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 
@@ -37,13 +35,11 @@ export default function Category({
     return (
         <>
             <header>
-                <Navbar />
                 <PostHeader {...post} />
             </header>
             <main className="flex items-center justify-center">
                 <PostBody content={post.content} />
             </main>
-            <CopyrightFooter />
         </>
     )
 }

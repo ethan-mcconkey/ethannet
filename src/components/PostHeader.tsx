@@ -6,8 +6,10 @@ export default function PostHeader(params: {
 }): JSX.Element {
     return (
         <div>
-            <h1>{params.title}</h1>
-            <p>{formatDate(params.date)}</p>
+            <div className="p-4 m-0">
+                <h1 className="text-lg font-black mb-2">{params.title}</h1>
+                <p className="text-sm italic">{formatDate(params.date)}</p>
+            </div>
             <hr />
         </div>
     )
