@@ -43,3 +43,9 @@ export const getPost = (id: string, category: string): Post => {
         content,
     }
 }
+
+export const getPostIds = (category: string) => {
+    return readdirSync(path.join(postsDirectory, category)).map((filename) => {
+        return filename.replace('.md', '')
+    })
+}

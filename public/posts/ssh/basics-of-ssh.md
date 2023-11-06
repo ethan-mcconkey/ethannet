@@ -44,9 +44,6 @@ Ensure that the ssh server is running on the host machine.
 ## Windows
 
 Navigate to the windows services menu via the search bar or by pressing `Win + R` and typing "services.msc" without the quotes. Search the list of services for "OpenSSH Server" and ensure that it is started and set to run on startup.
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
 
 # Generating SSH Keys
 
