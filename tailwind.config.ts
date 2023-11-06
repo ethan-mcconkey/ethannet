@@ -1,11 +1,21 @@
 import { Config } from 'tailwindcss'
-
+import 'tailwindcss/colors'
+import colors from 'tailwindcss/colors'
 export default {
     content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: 'class',
     theme: {
         extend: {
-            colors: {},
+            colors: {
+                'light-300': colors.slate[300],
+                'light-400': colors.slate[400],
+                'light-500': colors.slate[500],
+                'light-900': colors.black,
+                'dark-50': colors.white,
+                'dark-600': colors.slate[600],
+                'dark-700': colors.slate[700],
+                'dark-800': colors.slate[800],
+            },
             typography: {
                 DEFAULT: {
                     css: {

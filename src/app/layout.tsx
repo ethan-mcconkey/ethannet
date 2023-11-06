@@ -31,11 +31,11 @@ export default function RootLayout({
     return (
         <html lang="en" className="">
             <body
-                className={` ${josefinSans.className} dark:bg-slate-800 bg-slate-300 dark:text-white text-black relative min-h-screen pb-16`}
+                className={` ${josefinSans.className} dark:bg-dark-800 bg-light-300 dark:text-dark-50 text-light-900 relative min-h-screen pb-16`}
             >
                 <Providers>
                     <header>
-                        <nav className="sticky w-full dark:bg-slate-700 bg-slate-400 p-2 flex flex-row items-center justify-between shadow dark:shadow-slate-600 shadow-slate-500">
+                        <nav className="sticky w-full dark:bg-dark-700 bg-light-400 p-2 flex flex-row items-center justify-between shadow dark:shadow-dark-600 shadow-light-500">
                             <div className="flex flex-row gap-2 justify-center items-center ">
                                 <Link className="navitem" href="/">
                                     <BiHomeAlt2 className="navicon" />
@@ -52,7 +52,7 @@ export default function RootLayout({
                         </nav>
                     </header>
                     {children}
-                    <footer className="w-full p-2 absolute bottom-0 dark:bg-slate-700 bg-slate-400 flex flex-row justify-between items-center">
+                    <footer className="w-full p-2 absolute bottom-0 dark:bg-dark-700 bg-light-400 flex flex-row justify-between items-center">
                         <p>
                             {'\u00A9'} 2023 Ethan McConkey. All Rights Reserved
                         </p>
