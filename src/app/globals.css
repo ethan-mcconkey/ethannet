@@ -35,4 +35,8 @@
     .navicon {
         @apply text-center text-2xl;
     }
+
+    .socials {
+        @apply flex flex-row gap-1;
+    }
 }

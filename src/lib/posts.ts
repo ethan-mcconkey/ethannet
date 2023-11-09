@@ -4,7 +4,9 @@ import path from 'path'
 
 const postsDirectory = path.join(process.cwd(), 'public/posts')
 
-export const categories = readdirSync(postsDirectory)
+export const categories = readdirSync(postsDirectory).filter(
+    (category) => category !== '__WIP__'
+)
 
 export const staticRoutes: Array<{ id: string; category: string }> = []
 

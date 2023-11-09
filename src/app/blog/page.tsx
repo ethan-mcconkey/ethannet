@@ -15,7 +15,7 @@ export default function Blog() {
                     return (
                         <section key={category}>
                             <h1 className="font-bold text-2xl mb-4 mt-2">
-                                {category.toUpperCase()}
+                                {category.toUpperCase().replace('-', ' ')}
                             </h1>
                             <div className="flex flex-wrap justify-center gap-x-[1%] gap-y-4">
                                 {getPostIds(category).map((id) => {

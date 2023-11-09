@@ -54,11 +54,24 @@ export default function RootLayout({
                     {children}
                     <footer className="w-full p-2 absolute bottom-0 dark:bg-dark-700 bg-light-400 flex flex-row justify-between items-center">
                         <p>
-                            {'\u00A9'} 2023 Ethan McConkey. All Rights Reserved
-                        </p>
-                        <div className="flex flex-row gap-4 text-xl p-0 m-0">
                             <Link
-                                className="flex flex-row gap-1"
+                                href="mailto:ethanmcconkey@protonmail.com"
+                                title="Contact Me via Email"
+                            >
+                                Ethan McConkey
+                            </Link>{' '}
+                            {'\u00A9'} 2023.{' '}
+                            <Link
+                                href="https://github.com/ethan-mcconkey/personal-website/blob/2895e0dbea002ad6f54f2e0feee5a823882eb47e/LICENSE"
+                                title="License"
+                                target="_blank"
+                            >
+                                All Rights Reserved
+                            </Link>
+                        </p>
+                        <div className="flex flex-row gap-4 text-xl">
+                            <Link
+                                className="socials"
                                 href="https://github.com/ethan-mcconkey"
                                 title="Go to my GitHub page."
                                 target="_blank"
@@ -67,7 +80,7 @@ export default function RootLayout({
                                 <p>GitHub</p>
                             </Link>
                             <Link
-                                className="flex flex-row gap-1"
+                                className="socials"
                                 href="https://www.linkedin.com/in/ethan-mcconkey-635702263/"
                                 title="Go to my LinkedIn page."
                                 target="_blank"
