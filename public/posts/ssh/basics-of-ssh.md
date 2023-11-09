@@ -154,4 +154,4 @@ You can then restart the server and your ssh key should still work but now you c
 
 # References
 
-Veronica Explains. (2022, February 7). _OpenSSH for absolute beginners._ YouTube: [https://youtu.be/3FKsdbjzBcc](https://youtu.be/3FKsdbjzBcc 'OpenSSH for absolute beginners.')
+Veronica Explains. (2022) OpenSSH for absolute beginners, YouTube. Available at: https://www.youtube.com/watch?v=3FKsdbjzBcc (Accessed: 09 November 2023).
