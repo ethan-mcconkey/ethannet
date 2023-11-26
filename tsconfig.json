@@ -7,8 +7,8 @@
         "strict": true,
         "noEmit": true,
         "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
+        "module": "ESNext",
+        "moduleResolution": "Node",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
@@ -33,10 +33,11 @@
         ".next/types/**/*.ts",
         "dist/types/**/*.ts",
         "next.config.ts",
-        "tailwind.config.ts",
+        "tailwind.config.js",
         "postcss.config.cjs",
         "src/lib/posts.ts",
-        "tests/lib/posts.test.ts"
+        "tests/lib/posts.test.ts",
+        "jest.config.mjs"
     ],
     "exclude": ["node_modules"]
 }

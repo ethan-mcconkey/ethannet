@@ -19,42 +19,39 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Setup Node ${{ vars.NODE_VERSION }}
-              uses: actions/setup-node@v3
+            - name: Setup Bun ${{ vars.BUN_VERSION }}
+              uses: oven-sh/setup-bun@v1
               with:
-                  node-version: ${{ vars.NODE_VERSION }}
-                  cache: npm
+                  bun-version: ${{ vars.BUN_VERSION }}
             - name: Install Dependencies
-              run: npm ci
-            - name: Run Linter
-              run: 'npm run lint'
+              run: bun install
+            - name: Lint
+              run: 'bun run lint'
 
     test:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Setup Node ${{ vars.NODE_VERSION }}
-              uses: actions/setup-node@v3
+            - name: Setup Bun ${{ vars.BUN_VERSION }}
+              uses: oven-sh/setup-bun@v1
               with:
-                  node-version: ${{ vars.NODE_VERSION }}
-                  cache: npm
+                  bun-version: ${{ vars.BUN_VERSION }}
             - name: Install Dependencies
-              run: npm ci
-            - name: Run Tests
-              run: 'npm run test'
+              run: bun install
+            - name: Test
+              run: 'bun test'
 
     build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Setup Node ${{ vars.NODE_VERSION }}
-              uses: actions/setup-node@v3
+            - name: Setup Bun ${{ vars.BUN_VERSION }}
+              uses: oven-sh/setup-bun@v1
               with:
-                  node-version: ${{ vars.NODE_VERSION }}
-                  cache: npm
+                  bun-version: ${{ vars.BUN_VERSION }}
             - name: Install Dependencies
-              run: npm ci
-            - name: Run Build
-              run: npm run build
+              run: bun install
+            - name: Build
+              run: bun run build
