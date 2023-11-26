@@ -30,7 +30,7 @@
         "@swc/jest": "^0.2.29",
         "@tailwindcss/typography": "^0.5.10",
         "@testing-library/jest-dom": "^6.1.4",
-        "@testing-library/react": "^14.0.0",
+        "@testing-library/react": "^14.1.2",
         "@types/jest": "^29.5.8",
         "@types/node": "^20.9.2",
         "@types/react": "^18.2.37",
