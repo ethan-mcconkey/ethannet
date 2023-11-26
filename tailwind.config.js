@@ -1,7 +1,6 @@
-import { Config } from 'tailwindcss'
 import 'tailwindcss/colors'
 import colors from 'tailwindcss/colors'
-export default {
+module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: 'class',
     theme: {
@@ -31,4 +30,4 @@ export default {
         },
     },
     plugins: [require('@tailwindcss/typography')],
-} satisfies Config
+}

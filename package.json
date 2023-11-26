@@ -5,16 +5,12 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "build:local": "prettier --write . && stylelint --allow-empty-input \"**/*.css\" && next build",
-        "lint": "prettier --check . && stylelint --allow-empty-input \"**/*.css\" && next lint",
-        "format": "prettier --write .",
-        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-        "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-        "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
-        "clean:linux": "rm -rf dist .next coverage .swc node_modules && npm install"
+        "build:local": "prettier . -w && stylelint \"**/*.css\" && next build",
+        "lint": "prettier . -c && stylelint \"**/*.css\" && next lint",
+        "format": "prettier . -w"
     },
     "dependencies": {
-        "axios": "^1.6.1",
+        "bun-types": "^1.0.14",
         "gray-matter": "^4.0.3",
         "highlight.js": "^11.9.0",
         "next": "^14.0.3",
@@ -26,13 +22,7 @@
         "rehype-highlight": "^7.0.0"
     },
     "devDependencies": {
-        "@jest/globals": "^29.7.0",
-        "@swc/jest": "^0.2.29",
         "@tailwindcss/typography": "^0.5.10",
-        "@testing-library/jest-dom": "^6.1.4",
-        "@testing-library/react": "^14.1.2",
-        "@types/jest": "^29.5.8",
-        "@types/node": "^20.9.2",
         "@types/react": "^18.2.37",
         "@typescript-eslint/eslint-plugin": "^6.11.0",
         "@typescript-eslint/parser": "^6.12.0",
@@ -40,59 +30,13 @@
         "eslint": "^8.54.0",
         "eslint-config-next": "^14.0.3",
         "eslint-config-prettier": "^9.0.0",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
         "node-fetch": "^3.3.2",
         "postcss": "^8.4.31",
         "prettier": "^3.1.0",
         "stylelint": "^15.11.0",
         "stylelint-config-tailwindcss": "^0.0.7",
         "tailwindcss": "^3.3.5",
-        "ts-jest": "^29.1.1",
         "typescript": "^5.2.2"
     },
-    "type": "module",
-    "eslintConfig": {
-        "root": true,
-        "parser": "@typescript-eslint/parser",
-        "plugins": [
-            "@typescript-eslint"
-        ],
-        "extends": [
-            "eslint:recommended",
-            "next/core-web-vitals",
-            "prettier"
-        ],
-        "overrides": [
-            {
-                "files": [
-                    "*.ts",
-                    "*.tsx"
-                ],
-                "parserOptions": {
-                    "project": [
-                        "./tsconfig.json"
-                    ],
-                    "tsconfigRootDir": "./"
-                },
-                "extends": [
-                    "plugin:@typescript-eslint/recommended",
-                    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-                    "next/core-web-vitals",
-                    "prettier"
-                ]
-            }
-        ]
-    },
-    "stylelint": {
-        "extends": [
-            "stylelint-config-tailwindcss"
-        ]
-    },
-    "prettier": {
-        "trailingComma": "es5",
-        "tabWidth": 4,
-        "semi": false,
-        "singleQuote": true
-    }
+    "type": "module"
 }
