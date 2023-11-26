@@ -69,7 +69,7 @@
         "tasks": [
             {
                 "label": "build",
-                "command": "npm run build:local",
+                "command": "bun run build:local",
                 "type": "shell",
                 "args": [],
                 "problemMatcher": [
