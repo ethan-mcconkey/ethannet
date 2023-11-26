@@ -34,10 +34,7 @@
         "[javascriptreact]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
-        "stylelint.validate": [
-            "css",
-            "scss"
-        ],
+        "stylelint.validate": ["css", "scss"],
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.fixAll": true
@@ -72,9 +69,7 @@
                 "command": "bun run build:local",
                 "type": "shell",
                 "args": [],
-                "problemMatcher": [
-                    "$tsc"
-                ],
+                "problemMatcher": ["$tsc"],
                 "presentation": {
                     "reveal": "always"
                 },
