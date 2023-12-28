@@ -26,10 +26,6 @@
         "[javascriptreact]": {
             "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
-        "[scss]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "stylelint.validate": ["css", "scss"],
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.fixAll": "explicit"
