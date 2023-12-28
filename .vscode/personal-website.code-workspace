@@ -3,14 +3,6 @@
         {
             "path": "..",
             "name": "Personal Website"
-        },
-        {
-            "path": "../public/posts",
-            "name": "Posts"
-        },
-        {
-            "path": "../public/images/posts",
-            "name": "Post Images"
         }
     ],
     "settings": {
@@ -40,7 +32,7 @@
         "stylelint.validate": ["css", "scss"],
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.fixAll": true
+            "source.fixAll": "explicit"
         },
         "conventionalCommits.scopes": [
             "vs code",
