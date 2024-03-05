@@ -29,7 +29,7 @@
         "@jest/globals": "^29.7.0",
         "@swc/jest": "^0.2.29",
         "@tailwindcss/typography": "^0.5.10",
-        "@testing-library/jest-dom": "^6.1.6",
+        "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.1.2",
         "@types/jest": "^29.5.11",
         "@types/node": "^20.10.6",
